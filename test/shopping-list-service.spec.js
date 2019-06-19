@@ -75,7 +75,7 @@ describe('Shopping Service Tests', () => {
       };
       const itemId = 2;
       return ShoppingService.updateShoppingItem(db, itemId, newProps)
-        .then(() => ShoppingService.getById(itemId))
+        .then(() => ShoppingService.getById(db, itemId))
         .then(res => {
           expect(res).to.eql(expected);
         });
